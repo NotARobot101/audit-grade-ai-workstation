@@ -1,8 +1,6 @@
 # audit-grade-ai-workstation
 Design rationale for a dual-GPU workstation supporting reproducible AI safety evaluation
 
-Design Rationale: Dual-GPU Workstation for Audit-Grade AI Evaluation
-Purpose
 
 This document describes the hardware requirements for a single-node workstation intended to support reproducible, audit-grade AI safety and evaluation research. The goal is not raw performance or benchmarking, but deterministic execution, isolation, and long-duration stability under real analytical workloads.
 
