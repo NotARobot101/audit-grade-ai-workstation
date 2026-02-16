@@ -1,0 +1,15 @@
+## Audit-Grade Evaluation of RAG Reset Robustness
+
+This repository contains a short methodology appendix describing a deterministic framework
+to test whether common reset procedures in retrieval-augmented LLM systems
+(thread isolation, context flushing, cooldowns) return the system to a clean behavioral state.
+
+**Key observation:**  
+Across controlled runs, lexical residue appears only after ingestion of untrusted retrieved
+content and survives reset mechanisms assumed to neutralize prior influence.
+
+This repo intentionally omits prompts, payloads, and vendor-specific details.
+The PDF below documents the measurement approach and hardware constraints.
+
+📄 Methodology Appendix (PDF):
+- METHODOLOGY_APPENDIX_SIGNATURE_EXTRACTION_v1.pdf
