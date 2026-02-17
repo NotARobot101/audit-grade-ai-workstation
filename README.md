@@ -11,3 +11,12 @@ These documents define structural criteria for determining whether high-stakes A
 
 This repository is released as-is. No roadmap or support is implied.
 
+## Engagement Model
+
+EasyStreet engagements are authorization-based, not advisory.
+
+If you can provide a folder, repository, or system boundary you are authorized to test,
+EasyStreet will return a sealed, verifiable evidence package produced under the
+AEGIS-ALD-W1 protocol.
+
+No demos. No opinions. No iterative consulting.
