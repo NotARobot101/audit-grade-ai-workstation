@@ -1,4 +1,4 @@
-## Audit-Grade Evaluation of RAG Reset Robustness
+## Evaluation of RAG Reset Robustness
 
 This repository contains a short methodology appendix describing a deterministic framework
 to test whether common reset procedures in retrieval-augmented LLM systems
