@@ -14,7 +14,7 @@ It does not evaluate, approve, endorse, or interpret decisions.
 
 ## 1) What you need
 - Python 3 installed (no internet required)
-- A receipt bundle as a **folder** or a **ZIP**
+- A receipt bundle as a **folder** 
 
 The bundle must include:
 - `Decision_Receipt.md`
