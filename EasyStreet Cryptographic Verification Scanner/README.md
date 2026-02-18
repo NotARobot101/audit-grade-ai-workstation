@@ -1,22 +1,49 @@
+# README.md
 
----
+# EasyStreet Cryptographic Verification Scanner
 
-## Status
+A read-only, offline tool that mechanically verifies the cryptographic integrity of sealed EasyStreet receipt bundles.
 
-Core receipt generation and verification are **frozen**.
+**This tool verifies cryptographic integrity only. It does not evaluate, approve, endorse, or interpret decisions.**
 
-All extensions are append-only.
+## What it does
+Given a sealed receipt bundle (folder or ZIP), the scanner performs deterministic verification:
+- Recomputes SHA-256 for bound evidence/components
+- Verifies internal consistency across `MANIFEST.json`, `TEST_INDEX.csv`, and `trace.jsonl`
+- Verifies the hash-chain integrity of `trace.jsonl`
+- Verifies the final commitment in `ROOT.txt`
+- Enforces strict version pinning (e.g., `Receipt Version: 1.0 (Frozen)`)
 
----
+## What it does NOT do
+- No “risk scoring” or compliance grading
+- No remediation advice
+- No workflow integration, API calls, or network activity
+- No receipt generation, editing, repairing, or normalization
+- No inference of intent, fault, or legal conclusions
 
-## License & Responsibility
+## Inputs (receipt bundle requirements)
+A valid bundle must include:
+- `Decision_Receipt.md`
+- `MANIFEST.json`
+- `TEST_INDEX.csv`
+- `trace.jsonl`
+- `ROOT.txt`
 
-EasyStreet provides cryptographic evidence of decisions.
+The scanner is fail-closed. Missing or malformed artifacts result in a non-zero exit code.
 
-It does not approve, endorse, certify, or validate the decisions themselves.
+## Outputs
+The scanner produces:
+- `INSPECTION_REPORT.md` (human-readable mechanical translation)
+- `inspection_result.json` (machine-readable summary)
 
-Use of EasyStreet does not transfer liability.
+Exit codes:
+- `0` = VALID (cryptographic integrity intact)
+- `1` = INVALID (integrity broken / mismatch detected)
+- `2` = MALFORMED (missing/unsupported/incomplete bundle)
 
----
+## Quick start
 
-*Examina omnia, venerare nihil, pro te cogita.*
+### Verify a folder bundle
+```bash
+python inspector.py /path/to/receipt_bundle
+
